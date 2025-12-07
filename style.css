@@ -1,41 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
-  background: #f5f7f9;
+  background: #f4f6f9;
   color: #333;
 }
+
+/* ===== Header ===== */
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem 2rem;
-  background: #2e7d32;
+  background: linear-gradient(90deg, #2e7d32, #388e3c);
   color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
 }
+
+header .logo {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
 nav ul {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
+
+nav ul li {
+  cursor: pointer;
+  transition: color 0.3s;
+  position: relative;
+}
+
+nav ul li:hover {
+  color: #c8e6c9;
+}
+
+nav ul li::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #c8e6c9;
+  transition: width 0.3s;
+}
+
+nav ul li:hover::after {
+  width: 100%;
+}
+
+/* ===== Summary Cards ===== */
 .summary-cards {
   display: flex;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1.5rem;
 }
+
 .card {
   background: white;
-  padding: 1rem;
-  border-radius: 8px;
+  padding: 1.5rem;
+  border-radius: 12px;
   flex: 1;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  font-weight: 600;
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
 }
+
+.card i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card:hover i {
+  animation: pulse 0.6s infinite alternate;
+}
+
+/* ألوان مختلفة لكل بطاقة */
+.card.total { background: linear-gradient(135deg, #4caf50, #81c784); animation-delay: 0.2s; }
+.card.scope1 { background: linear-gradient(135deg, #ff9800, #ffb74d); animation-delay: 0.4s; }
+.card.scope2 { background: linear-gradient(135deg, #2196f3, #64b5f6); animation-delay: 0.6s; }
+.card.scope3 { background: linear-gradient(135deg, #9e9e9e, #bdbdbd); animation-delay: 0.8s; }
+
+/* ===== Charts Section ===== */
 .charts {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
-  padding: 1rem 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
 }
+
 canvas {
-  background: white;
-  border-radius: 8px;
+  background: #fff;
+  border-radius: 12px;
   padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: scale(0.95);
+  animation: zoomIn 1s ease forwards;
+}
+
+canvas:nth-child(1) { animation-delay: 1s; }
+canvas:nth-child(2) { animation-delay: 1.2s; }
+canvas:nth-child(3) { animation-delay: 1.4s; }
+canvas:nth-child(4) { animation-delay: 1.6s; }
+canvas:nth-child(5) { animation-delay: 1.8s; }
+
+canvas:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #2e7d32;
+  color: white;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 2s;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  from { transform: scale(1); color: #fff; }
+  to { transform: scale(1.2); color: #f1f8e9; }
 }
