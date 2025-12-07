@@ -2,6 +2,10 @@ async function loadData() {
   const response = await fetch('data.json');
   const data = await response.json();
 
+  // إعداد أنيميشن عام للرسوم البيانية
+  Chart.defaults.animation.duration = 1200;
+  Chart.defaults.animation.easing = 'easeOutBounce';
+
   // Pie Chart
   new Chart(document.getElementById('scopePieChart'), {
     type: 'pie',
@@ -9,7 +13,7 @@ async function loadData() {
       labels: ['Scope 1', 'Scope 2', 'Scope 3'],
       datasets: [{
         data: [data.emissions.scope1, data.emissions.scope2, data.emissions.scope3],
-        backgroundColor: ['#4caf50', '#81c784', '#c8e6c9']
+        backgroundColor: ['#ff9800', '#2196f3', '#9e9e9e']
       }]
     }
   });
@@ -22,7 +26,7 @@ async function loadData() {
       datasets: [{
         label: 'Emissions',
         data: Object.values(data.miniScopes),
-        backgroundColor: '#2196f3'
+        backgroundColor: '#4caf50'
       }]
     }
   });
@@ -49,7 +53,7 @@ async function loadData() {
       datasets: [{
         label: 'Uncertainty %',
         data: [data.uncertainty.scope1, data.uncertainty.scope2, data.uncertainty.scope3],
-        backgroundColor: ['#ff9800', '#ffc107', '#ffe082']
+        backgroundColor: ['#ff9800', '#2196f3', '#9e9e9e']
       }]
     }
   });
