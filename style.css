@@ -1,0 +1,41 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #f5f7f9;
+  color: #333;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #2e7d32;
+  color: white;
+}
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+.summary-cards {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  flex: 1;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+canvas {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+}

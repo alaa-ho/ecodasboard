@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eco Sourcing Hub Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Eco Sourcing Hub</div>
+    <nav>
+      <ul>
+        <li>Reports</li>
+        <li>Comparisons</li>
+        <li>Profile</li>
+        <li>Settings</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="summary-cards">
+      <div class="card">Total Emissions</div>
+      <div class="card">Scope 1</div>
+      <div class="card">Scope 2</div>
+      <div class="card">Scope 3</div>
+    </section>
+
+    <section class="charts">
+      <canvas id="scopePieChart"></canvas>
+      <canvas id="miniScopeBars"></canvas>
+      <canvas id="comparisonsLine"></canvas>
+      <canvas id="uncertaintyBars"></canvas>
+      <canvas id="keywordDonut"></canvas>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

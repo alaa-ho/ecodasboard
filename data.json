@@ -1,0 +1,29 @@
+{
+  "emissions": {
+    "scope1": 120,
+    "scope2": 300,
+    "scope3": 580,
+    "total": 1000
+  },
+  "miniScopes": {
+    "Direct": 200,
+    "Electricity": 150,
+    "Upstream": 300,
+    "Downstream": 100
+  },
+  "comparisons": {
+    "years": ["2021", "2022", "2023", "2024"],
+    "values": [800, 750, 700, 680]
+  },
+  "uncertainty": {
+    "scope1": 5,
+    "scope2": 12,
+    "scope3": 20
+  },
+  "keywords": {
+    "UK Gov": 245,
+    "Custom": 80,
+    "Eco Hub": 60,
+    "General": 20
+  }
+}
